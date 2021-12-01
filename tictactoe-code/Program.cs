@@ -9,4 +9,5 @@ Console.WriteLine("Welcome to Tic Tac Toe!");
 Console.WriteLine();
 Console.WriteLine("Here's the current board:");
 Console.WriteLine();
-Console.WriteLine(board.printBoard());
+board.InitialiseBoard();
+Console.WriteLine(board.PrintBoard());

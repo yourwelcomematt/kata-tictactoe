@@ -4,11 +4,11 @@ namespace kata_tictactoe
 {
     public class Board
     {
-        private string row1 = ". . .";
-        private string row2 = ". . .";
-        private string row3 = ". . .";
+        private string row1 { get; set; }
+        private string row2 { get; set; }
+        private string row3 { get; set; }
 
-        public string printBoard()
+        public string PrintBoard()
         {
             var board = new StringBuilder();
             board.AppendLine(row1);
@@ -16,6 +16,18 @@ namespace kata_tictactoe
             board.AppendLine(row3);
             
             return board.ToString();
+        }
+
+        public void InitialiseBoard()
+        {
+            row1 = ". . .";
+            row2 = ". . .";
+            row3 = ". . .";
+        }
+
+        public void UpdateBoard(string coordinates)
+        {
+            
         }
     }
 }
