@@ -10,4 +10,4 @@ Console.WriteLine();
 Console.WriteLine("Here's the current board:");
 Console.WriteLine();
 board.InitialiseBoard();
-Console.WriteLine(board.PrintBoard());
+Console.WriteLine(board.GenerateBoard());
