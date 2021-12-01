@@ -8,7 +8,14 @@ namespace kata_tictactoe
         private string row2 { get; set; }
         private string row3 { get; set; }
 
-        public string PrintBoard()
+        public void InitialiseBoard()
+        {
+            row1 = ". . .";
+            row2 = ". . .";
+            row3 = ". . .";
+        }
+        
+        public string GenerateBoard()
         {
             var board = new StringBuilder();
             board.AppendLine(row1);
@@ -16,13 +23,6 @@ namespace kata_tictactoe
             board.AppendLine(row3);
             
             return board.ToString();
-        }
-
-        public void InitialiseBoard()
-        {
-            row1 = ". . .";
-            row2 = ". . .";
-            row3 = ". . .";
         }
 
         public void UpdateBoard(string coordinates, string player)
