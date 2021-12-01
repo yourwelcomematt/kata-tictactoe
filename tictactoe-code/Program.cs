@@ -11,3 +11,7 @@ Console.WriteLine("Here's the current board:");
 Console.WriteLine();
 board.InitialiseBoard();
 Console.WriteLine(board.GenerateBoard());
+// board.UpdateBoard("1, 1", "Player 1");
+// Console.WriteLine(board.GenerateBoard());
+// board.UpdateBoard("1, 3", "Player 2");
+// Console.WriteLine(board.GenerateBoard());
