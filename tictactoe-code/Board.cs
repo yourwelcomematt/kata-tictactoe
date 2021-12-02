@@ -31,21 +31,20 @@ namespace kata_tictactoe
         // To test
         public void UpdateBoard(string coordinates, string symbol)
         {
-            int xCoordinate = int.Parse(coordinates.Substring(0, 1));
-            int yCoordinate = int.Parse(coordinates.Substring(3, 1));
-            Console.WriteLine($"X coordinate is {xCoordinate} and y coordinate is {yCoordinate}");
+            int rowNumber = int.Parse(coordinates.Substring(0, 1));
+            int columnNumberIndex = int.Parse(coordinates.Substring(3, 1)) - 1;
 
-            if (xCoordinate == 1)
+            if (rowNumber == 1)
             {
-                row1[yCoordinate - 1] = symbol;
+                row1[columnNumberIndex] = symbol;
             }
-            else if (xCoordinate == 2)
+            else if (rowNumber == 2)
             {
-                row2[yCoordinate - 1] = symbol;
+                row2[columnNumberIndex] = symbol;
             }
             else
             {
-                row3[yCoordinate - 1] = symbol;
+                row3[columnNumberIndex] = symbol;
             }
         }
     }
