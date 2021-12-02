@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -30,35 +31,21 @@ namespace kata_tictactoe
         // To test
         public void UpdateBoard(string coordinates, string symbol)
         {
-            switch (coordinates)
+            int xCoordinate = int.Parse(coordinates.Substring(0, 1));
+            int yCoordinate = int.Parse(coordinates.Substring(3, 1));
+            Console.WriteLine($"X coordinate is {xCoordinate} and y coordinate is {yCoordinate}");
+
+            if (xCoordinate == 1)
             {
-                case "1, 1":
-                    row1[0] = symbol;
-                    break;
-                case "1, 2":
-                    row1[1] = symbol;
-                    break;
-                case "1, 3":
-                    row1[2] = symbol;
-                    break;
-                case "2, 1":
-                    row2[0] = symbol;
-                    break;
-                case "2, 2":
-                    row2[1] = symbol;
-                    break;
-                case "2, 3":
-                    row2[2] = symbol;
-                    break;
-                case "3, 1":
-                    row3[0] = symbol;
-                    break;
-                case "3, 2":
-                    row3[1] = symbol;
-                    break;
-                case "3, 3":
-                    row3[2] = symbol;
-                    break;
+                row1[yCoordinate - 1] = symbol;
+            }
+            else if (xCoordinate == 2)
+            {
+                row2[yCoordinate - 1] = symbol;
+            }
+            else
+            {
+                row3[yCoordinate - 1] = symbol;
             }
         }
     }
