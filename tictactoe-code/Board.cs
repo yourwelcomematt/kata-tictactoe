@@ -10,13 +10,13 @@ namespace kata_tictactoe
         public List<string> Row2 { get; set; }
         public List<string> Row3 { get; set; }
 
-        public void InitialiseBoard()
+        public Board()
         {
             Row1 = new List<string>() {".", ".", "."};
             Row2 = new List<string>() {".", ".", "."};
             Row3 = new List<string>() {".", ".", "."};
         }
-        
+
         // To test
         public string GenerateBoard()
         {

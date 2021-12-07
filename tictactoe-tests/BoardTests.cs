@@ -12,7 +12,6 @@ namespace tictactoe_tests
             // Arrange
             Board board = new();
             // Act
-            board.InitialiseBoard();
             string actual = board.GenerateBoard();
             string expected = ". . .\n" + 
                               ". . .\n" +
@@ -26,7 +25,6 @@ namespace tictactoe_tests
         {
             // Arrange
             Board board = new();
-            board.InitialiseBoard();
             // Act
             board.UpdateBoard("1, 1", "X");
             List<string> actual = board.Row1;
@@ -40,7 +38,6 @@ namespace tictactoe_tests
         {
             // Arrange
             Board board = new();
-            board.InitialiseBoard();
             // Act
             board.UpdateBoard("2, 1", "X");
             List<string> actual = board.Row2;
@@ -54,7 +51,6 @@ namespace tictactoe_tests
         {
             // Arrange
             Board board = new();
-            board.InitialiseBoard();
             // Act
             board.UpdateBoard("3, 1", "X");
             List<string> actual = board.Row3;
