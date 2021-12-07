@@ -13,55 +13,54 @@ namespace tictactoe_tests
             // Act
             board.InitialiseBoard();
             string actual = board.GenerateBoard();
-            string expected = ". . .\n" + ". . .\n" + ". . .\n";
-            // Assert
-            Assert.Equal(expected, actual);
-        }
-
-        [InlineData("X")]
-        [InlineData("O")]
-        [Theory]
-        public void CanUpdate_Row1_AfterMoveIsMade(string symbol)
-        {
-            // Arrange
-            Board board = new();
-            board.InitialiseBoard();
-            // Act
-            board.UpdateBoard("1, 1", symbol);
-            string actual = board.GenerateBoard();
-            string expected = $"{symbol} . .\n" + ". . .\n" + ". . .\n";
+            string expected = ". . .\n" 
+                              + ". . .\n" 
+                              + ". . .\n";
             // Assert
             Assert.Equal(expected, actual);
         }
         
-        [InlineData("X")]
-        [InlineData("O")]
-        [Theory]
-        public void CanUpdate_Row2_AfterMoveIsMade(string symbol)
+        [Fact]
+        public void CanUpdate_Row1_AfterMoveIsMade()
         {
             // Arrange
             Board board = new();
             board.InitialiseBoard();
             // Act
-            board.UpdateBoard("2, 1", symbol);
+            board.UpdateBoard("1, 1", "X");
             string actual = board.GenerateBoard();
-            string expected = ". . .\n" + $"{symbol} . .\n" + ". . .\n";
+            string expected = @"X . .
+. . .
+. . .
+";
             // Assert
             Assert.Equal(expected, actual);
         }
         
-        [InlineData("X")]
-        [InlineData("O")]
-        [Theory]
-        public void CanUpdate_Row3_AfterMoveIsMade(string symbol)
+        [Fact]
+        public void CanUpdate_Row2_AfterMoveIsMade()
         {
             // Arrange
             Board board = new();
             board.InitialiseBoard();
             // Act
-            board.UpdateBoard("3, 1", symbol);
+            board.UpdateBoard("2, 1", "X");
             string actual = board.GenerateBoard();
-            string expected = ". . .\n" + ". . .\n" + $"{symbol} . .\n";
+            string expected = ". . .\n" + "X . .\n" + ". . .\n";
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+        
+        [Fact]
+        public void CanUpdate_Row3_AfterMoveIsMade()
+        {
+            // Arrange
+            Board board = new();
+            board.InitialiseBoard();
+            // Act
+            board.UpdateBoard("3, 1", "X");
+            string actual = board.GenerateBoard();
+            string expected = ". . .\n" + ". . .\n" + "X . .\n";
             // Assert
             Assert.Equal(expected, actual);
         }
