@@ -18,7 +18,7 @@ namespace kata_tictactoe
         }
 
         // To test
-        public string GenerateBoard()
+        public string GetStringOfBoard()
         {
             var board = new StringBuilder();
             board.AppendLine($"{Row1[0]} {Row1[1]} {Row1[2]}");

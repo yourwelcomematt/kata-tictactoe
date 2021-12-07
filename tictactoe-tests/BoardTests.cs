@@ -12,7 +12,7 @@ namespace tictactoe_tests
             // Arrange
             Board board = new();
             // Act
-            string actual = board.GenerateBoard();
+            string actual = board.GetStringOfBoard();
             string expected = ". . .\n" + 
                               ". . .\n" +
                               ". . .\n";
