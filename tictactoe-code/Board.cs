@@ -6,9 +6,9 @@ namespace kata_tictactoe
 {
     public class Board
     {
-        private List<string> row1;
-        private List<string> row2;
-        private List<string> row3;
+        public List<string> row1 { get; set; }
+        public List<string> row2 { get; set; }
+        public List<string> row3 { get; set; }
 
         public void InitialiseBoard()
         {
