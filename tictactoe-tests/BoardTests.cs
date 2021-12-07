@@ -7,7 +7,7 @@ namespace tictactoe_tests
     public class BoardTests
     {
         [Fact]
-        public void CanGenerate_Board_AfterInitialising()
+        public void CanCorrectlyInitialise_Board_AfterConstruction()
         {
             // Arrange
             Board board = new();
