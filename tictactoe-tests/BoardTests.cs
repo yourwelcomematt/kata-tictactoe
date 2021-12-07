@@ -58,5 +58,20 @@ namespace tictactoe_tests
             // Assert
             Assert.Equal(expected, actual);
         }
+        
+        [Fact]
+        public void CanGet_StringOfBoard_AfterMoveIsMade()
+        {
+            // Arrange
+            Board board = new();
+            board.UpdateBoard("3, 1", "X");
+            // Act
+            string actual = board.GetStringOfBoard();
+            string expected = ". . .\n" + 
+                              ". . .\n" +
+                              "X . .\n";
+            // Assert
+            Assert.Equal(expected, actual);
+        }
     }
 }
