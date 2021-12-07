@@ -6,24 +6,24 @@ namespace kata_tictactoe
 {
     public class Board
     {
-        public List<string> row1 { get; set; }
-        public List<string> row2 { get; set; }
-        public List<string> row3 { get; set; }
+        public List<string> Row1 { get; set; }
+        public List<string> Row2 { get; set; }
+        public List<string> Row3 { get; set; }
 
         public void InitialiseBoard()
         {
-            row1 = new List<string>() {".", ".", "."};
-            row2 = new List<string>() {".", ".", "."};
-            row3 = new List<string>() {".", ".", "."};
+            Row1 = new List<string>() {".", ".", "."};
+            Row2 = new List<string>() {".", ".", "."};
+            Row3 = new List<string>() {".", ".", "."};
         }
         
         // To test
         public string GenerateBoard()
         {
             var board = new StringBuilder();
-            board.AppendLine($"{row1[0]} {row1[1]} {row1[2]}");
-            board.AppendLine($"{row2[0]} {row2[1]} {row2[2]}");
-            board.AppendLine($"{row3[0]} {row3[1]} {row3[2]}");
+            board.AppendLine($"{Row1[0]} {Row1[1]} {Row1[2]}");
+            board.AppendLine($"{Row2[0]} {Row2[1]} {Row2[2]}");
+            board.AppendLine($"{Row3[0]} {Row3[1]} {Row3[2]}");
             
             return board.ToString();
         }
@@ -36,15 +36,15 @@ namespace kata_tictactoe
 
             if (rowNumber == 1)
             {
-                row1[columnNumberIndex] = symbol;
+                Row1[columnNumberIndex] = symbol;
             }
             else if (rowNumber == 2)
             {
-                row2[columnNumberIndex] = symbol;
+                Row2[columnNumberIndex] = symbol;
             }
             else
             {
-                row3[columnNumberIndex] = symbol;
+                Row3[columnNumberIndex] = symbol;
             }
         }
     }

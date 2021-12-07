@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using kata_tictactoe;
 using Xunit;
 
@@ -13,9 +14,9 @@ namespace tictactoe_tests
             // Act
             board.InitialiseBoard();
             string actual = board.GenerateBoard();
-            string expected = ". . .\n" 
-                              + ". . .\n" 
-                              + ". . .\n";
+            string expected = ". . .\n" + 
+                              ". . .\n" +
+                              ". . .\n";
             // Assert
             Assert.Equal(expected, actual);
         }
@@ -28,11 +29,8 @@ namespace tictactoe_tests
             board.InitialiseBoard();
             // Act
             board.UpdateBoard("1, 1", "X");
-            string actual = board.GenerateBoard();
-            string expected = @"X . .
-. . .
-. . .
-";
+            List<string> actual = board.Row1;
+            List<string> expected = new() {"X", ".", "."};
             // Assert
             Assert.Equal(expected, actual);
         }
@@ -45,8 +43,8 @@ namespace tictactoe_tests
             board.InitialiseBoard();
             // Act
             board.UpdateBoard("2, 1", "X");
-            string actual = board.GenerateBoard();
-            string expected = ". . .\n" + "X . .\n" + ". . .\n";
+            List<string> actual = board.Row2;
+            List<string> expected = new() {"X", ".", "."};
             // Assert
             Assert.Equal(expected, actual);
         }
@@ -59,8 +57,8 @@ namespace tictactoe_tests
             board.InitialiseBoard();
             // Act
             board.UpdateBoard("3, 1", "X");
-            string actual = board.GenerateBoard();
-            string expected = ". . .\n" + ". . .\n" + "X . .\n";
+            List<string> actual = board.Row3;
+            List<string> expected = new() {"X", ".", "."};
             // Assert
             Assert.Equal(expected, actual);
         }
