@@ -28,5 +28,21 @@ namespace tictactoe_tests
             // Assert
             Assert.Equal(expected, actual);
         }
+        
+        [Fact]
+        public void CanUpdate_Board_UsingPlayerSymbol()
+        {
+            // Arrange
+            Board board = new();
+            Player player = new("X");
+            // Act
+            board.UpdateBoard("1, 1", player.Symbol);
+            string expected = "X . .\n" +
+                              ". . .\n" +
+                              ". . .\n";
+            string actual = board.GetStringOfBoard();
+            // Assert
+            Assert.Equal(expected, actual);
+        }
     }
 }
