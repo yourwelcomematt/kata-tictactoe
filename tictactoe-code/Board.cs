@@ -16,8 +16,7 @@ namespace kata_tictactoe
             Row2 = new List<string>() {".", ".", "."};
             Row3 = new List<string>() {".", ".", "."};
         }
-
-        // To test
+        
         public string GetStringOfBoard()
         {
             var board = new StringBuilder();
@@ -28,7 +27,6 @@ namespace kata_tictactoe
             return board.ToString();
         }
         
-        // To test
         public void UpdateBoard(string coordinates, string symbol)
         {
             int rowNumber = int.Parse(coordinates.Substring(0, 1));
