@@ -3,16 +3,14 @@
 using System;
 using kata_tictactoe;
 
-Player player1 = new("X");
-Player player2 = new("O");
-var board = new Board();
+Player player1 = new("Player 1", "X");
+Player player2 = new("Player 2", "O");
+Board board = new();
+GameDialogue gameDialogue = new();
 
-Console.WriteLine("Welcome to Tic Tac Toe!");
-Console.WriteLine();
-Console.WriteLine("Here's the current board:");
-Console.WriteLine();
+Console.WriteLine(gameDialogue.GetWelcomeMessageString());
 
-Console.WriteLine(board.GetStringOfBoard());
+Console.WriteLine("Player 1 enter a coord x,y to place your X or enter 'q' to give up: ");
 
 board.UpdateBoard("1, 1", player1.Symbol);
 Console.WriteLine(board.GetStringOfBoard());

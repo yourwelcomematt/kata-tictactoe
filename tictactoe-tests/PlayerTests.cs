@@ -9,7 +9,7 @@ namespace tictactoe_tests
         public void CanRetrieve_XSymbol_FromPlayer()
         {
             // Arrange
-            Player player = new("X");
+            Player player = new("Player 1", "X");
             // Act
             string expected = "X";
             string actual = player.Symbol;
@@ -21,7 +21,7 @@ namespace tictactoe_tests
         public void CanRetrieve_OSymbol_FromPlayer()
         {
             // Arrange
-            Player player = new("O");
+            Player player = new("Player 1", "O");
             // Act
             string expected = "O";
             string actual = player.Symbol;
@@ -34,7 +34,7 @@ namespace tictactoe_tests
         {
             // Arrange
             Board board = new();
-            Player player = new("X");
+            Player player = new("Player 1", "X");
             // Act
             board.UpdateBoard("1, 1", player.Symbol);
             string expected = "X . .\n" +
