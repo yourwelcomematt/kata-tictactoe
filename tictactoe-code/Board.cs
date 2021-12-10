@@ -30,7 +30,7 @@ namespace kata_tictactoe
         public void UpdateBoard(string coordinates, string symbol)
         {
             int rowNumber = int.Parse(coordinates.Substring(0, 1));
-            int columnNumberIndex = int.Parse(coordinates.Substring(3, 1)) - 1;
+            int columnNumberIndex = int.Parse(coordinates.Substring(2, 1)) - 1;
 
             if (rowNumber == 1)
             {

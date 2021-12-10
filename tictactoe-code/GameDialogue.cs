@@ -1,3 +1,4 @@
+using System;
 using System.Text;
 
 namespace kata_tictactoe
@@ -14,6 +15,13 @@ namespace kata_tictactoe
         public string GetUserInputPromptString(Player player)
         {
             return $"{player.Name} enter a coord x,y to place your {player.Symbol} or enter 'q' to give up: ";
+        }
+
+        public string GetUserInput(Player player)
+        {
+            Console.Write(GetUserInputPromptString(player));
+
+            return Console.ReadLine();
         }
     }
 }
