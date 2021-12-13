@@ -4,20 +4,20 @@ using Xunit;
 
 namespace tictactoe_tests
 {
-    public class GameDialogueTests
+    public class GameIoTests
     {
         [Fact]
         public void CanGet_WelcomeMessageString()
         {
             // Arrange
-            GameDialogue gameDialogue = new();
+            GameIo gameIo = new();
             // Act
             string expected = "Welcome to Tic Tac Toe!\n\n" +
                               "Here's the current board:\n\n" +
                               ". . .\n" +
                               ". . .\n" +
                               ". . .\n";
-            string actual = gameDialogue.GetWelcomeMessageString();
+            string actual = gameIo.GetWelcomeMessageString();
             // Assert
             Assert.Equal(expected, actual);
         }
@@ -26,11 +26,11 @@ namespace tictactoe_tests
         public void CanGet_UserInputPromptString_ForPlayer1()
         {
             // Arrange
-            GameDialogue gameDialogue = new();
+            GameIo gameIo = new();
             Player player1 = new("Player 1", "X");
             // Act
             string expected = "Player 1 enter a coord x,y to place your X or enter 'q' to give up: ";
-            string actual = gameDialogue.GetUserInputPromptString(player1);
+            string actual = gameIo.GetUserInputPromptString(player1);
             // Assert
             Assert.Equal(expected, actual);
         }
@@ -39,11 +39,11 @@ namespace tictactoe_tests
         public void CanGet_UserInputPromptString_ForPlayer2()
         {
             // Arrange
-            GameDialogue gameDialogue = new();
+            GameIo gameIo = new();
             Player player2 = new("Player 2", "O");
             // Act
             string expected = "Player 2 enter a coord x,y to place your O or enter 'q' to give up: ";
-            string actual = gameDialogue.GetUserInputPromptString(player2);
+            string actual = gameIo.GetUserInputPromptString(player2);
             // Assert
             Assert.Equal(expected, actual);
         }
@@ -58,13 +58,13 @@ namespace tictactoe_tests
         [InlineData("3,1")]
         [InlineData("3,2")]
         [InlineData("3,3")]
-        public void CanValidate_UserInput_IfValid(string userInput)
+        public void ValidateUserInput_ReturnsTrue_IfInputIsValid(string userInput)
         {
             // Arrange
-            GameDialogue gameDialogue = new();
+            GameIo gameIo = new();
             // Act
             bool expected = true;
-            bool actual = gameDialogue.ValidateUserInput(userInput);
+            bool actual = gameIo.ValidateUserInput(userInput);
             // Assert
             Assert.Equal(expected, actual);
         }
@@ -93,13 +93,13 @@ namespace tictactoe_tests
         [InlineData("3 1")]
         [InlineData("3a1")]
         [InlineData("3$1")]
-        public void CanValidate_UserInput_IfInvalid(string userInput)
+        public void ValidateUserInput_ReturnsFalse_IfInputIsInvalid(string userInput)
         {
             // Arrange
-            GameDialogue gameDialogue = new();
+            GameIo gameIo = new();
             // Act
             bool expected = false;
-            bool actual = gameDialogue.ValidateUserInput(userInput);
+            bool actual = gameIo.ValidateUserInput(userInput);
             // Assert
             Assert.Equal(expected, actual);
         }
@@ -110,10 +110,10 @@ namespace tictactoe_tests
         public void CheckIfQuitting_ReturnsTrue_AfterEnteringQ(string userInput)
         {
             // Arrange
-            GameDialogue gameDialogue = new();
+            GameIo gameIo = new();
             // Act
             bool expected = true;
-            bool actual = gameDialogue.CheckIfQuitting(userInput);
+            bool actual = gameIo.CheckIfQuitting(userInput);
             // Assert
             Assert.Equal(expected, actual);
         }
@@ -124,10 +124,37 @@ namespace tictactoe_tests
         public void CheckIfQuitting_ReturnsFalse_AfterNotEnteringQ(string userInput)
         {
             // Arrange
-            GameDialogue gameDialogue = new();
+            GameIo gameIo = new();
             // Act
             bool expected = false;
-            bool actual = gameDialogue.CheckIfQuitting(userInput);
+            bool actual = gameIo.CheckIfQuitting(userInput);
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void CheckIfPositionIsAlreadyFilled_ReturnsTrue_IfChosenPositionIsAlreadyFilled()
+        {
+            // Arrange
+            GameIo gameIo = new();
+            Board board = new();
+            board.Row1[0] = "X";
+            // Act
+            bool expected = true;
+            bool actual = gameIo.CheckIfPositionIsAlreadyFilled("1,1", board);
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+        
+        [Fact]
+        public void CheckIfPositionIsAlreadyFilled_ReturnsFalse_IfChosenPositionIsNotAlreadyFilled()
+        {
+            // Arrange
+            GameIo gameIo = new();
+            Board board = new();
+            // Act
+            bool expected = false;
+            bool actual = gameIo.CheckIfPositionIsAlreadyFilled("1,1", board);
             // Assert
             Assert.Equal(expected, actual);
         }

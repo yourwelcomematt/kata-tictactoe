@@ -1,8 +1,9 @@
 using System;
+using System.Collections.Generic;
 
 namespace kata_tictactoe
 {
-    public class GameDialogue
+    public class GameIo
     {
         public string GetWelcomeMessageString()
         {
@@ -16,7 +17,7 @@ namespace kata_tictactoe
             return $"{player.Name} enter a coord x,y to place your {player.Symbol} or enter 'q' to give up: ";
         }
 
-        public string GetUserInput(Player player)
+        public string GetUserInput(Player player, Board board)
         {
             Console.Write(GetUserInputPromptString(player));
             string userInput = Console.ReadLine();
@@ -72,6 +73,28 @@ namespace kata_tictactoe
         public bool CheckIfQuitting(string userInput)
         {
             return userInput.Equals("q") || userInput.Equals("Q");
+        }
+
+        public bool CheckIfPositionIsAlreadyFilled(string userInput, Board board)
+        {
+            int rowNumber = int.Parse(userInput.Substring(0, 1));
+            int columnNumberIndex = int.Parse(userInput.Substring(2, 1)) - 1;
+            string position;
+
+            if (rowNumber == 1)
+            {
+                position = board.Row1[columnNumberIndex];
+            }
+            else if (rowNumber == 2)
+            {
+                position = board.Row2[columnNumberIndex];
+            }
+            else
+            {
+                position = board.Row3[columnNumberIndex];
+            }
+
+            return position.Equals("X") || position.Equals("O");
         }
     }
 }

@@ -6,16 +6,16 @@ using kata_tictactoe;
 Player player1 = new("Player 1", "X");
 Player player2 = new("Player 2", "O");
 Board board = new();
-GameDialogue gameDialogue = new();
+GameIo gameIo = new();
 bool gameRunning = true;
 
-Console.WriteLine(gameDialogue.GetWelcomeMessageString());
+Console.WriteLine(gameIo.GetWelcomeMessageString());
 
 while (gameRunning)
 {
-    string userInput = gameDialogue.GetUserInput(player1).Trim();
+    string userInput = gameIo.GetUserInput(player1, board).Trim();
 
-    if (gameDialogue.CheckIfQuitting(userInput))
+    if (gameIo.CheckIfQuitting(userInput))
     {
         break;
     }
@@ -23,9 +23,9 @@ while (gameRunning)
     board.UpdateBoard(userInput, player1.Symbol);
     Console.WriteLine(board.GetStringOfBoard());
 
-    userInput = gameDialogue.GetUserInput(player2).Trim();
+    userInput = gameIo.GetUserInput(player2, board).Trim();
     
-    if (gameDialogue.CheckIfQuitting(userInput))
+    if (gameIo.CheckIfQuitting(userInput))
     {
         break;
     }
@@ -34,6 +34,7 @@ while (gameRunning)
     Console.WriteLine(board.GetStringOfBoard());
 }
 
-// Console.WriteLine();
-// Console.WriteLine("-------------------------------");
-// Console.WriteLine("Thank you for playing! Goodbye.");
+Console.WriteLine();
+Console.WriteLine("-------------------------------");
+Console.WriteLine();
+Console.WriteLine("Thank you for playing! Goodbye.");
