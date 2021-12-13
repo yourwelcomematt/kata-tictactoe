@@ -1,4 +1,3 @@
-using System;
 using kata_tictactoe;
 using Xunit;
 

@@ -13,6 +13,7 @@ Console.WriteLine(gameIo.GetWelcomeMessageString());
 
 while (gameRunning)
 {
+    // Player 1's turn
     string userInput = gameIo.GetUserInput(player1, board).Trim();
 
     if (gameIo.CheckIfQuitting(userInput))
@@ -21,9 +22,10 @@ while (gameRunning)
     }
 
     board.UpdateBoard(userInput, player1.Symbol);
-    Console.WriteLine();
+    Console.WriteLine(gameIo.GetMoveAcceptedString());
     Console.WriteLine(board.GetStringOfBoard());
-
+    
+    // Player 2's turn
     userInput = gameIo.GetUserInput(player2, board).Trim();
     
     if (gameIo.CheckIfQuitting(userInput))
@@ -32,7 +34,7 @@ while (gameRunning)
     }
 
     board.UpdateBoard(userInput, player2.Symbol);
-    Console.WriteLine();
+    Console.WriteLine(gameIo.GetMoveAcceptedString());
     Console.WriteLine(board.GetStringOfBoard());
 }
 

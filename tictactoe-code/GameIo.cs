@@ -1,5 +1,5 @@
 using System;
-using System.Collections.Generic;
+using System.Text;
 
 namespace kata_tictactoe
 {
@@ -15,6 +15,15 @@ namespace kata_tictactoe
         public string GetUserInputPromptString(Player player)
         {
             return $"{player.Name} enter a coord x,y to place your {player.Symbol} or enter 'q' to give up: ";
+        }
+
+        public string GetMoveAcceptedString()
+        {
+            StringBuilder stringBuilder = new();
+            stringBuilder.Append("Move accepted, here's the current board:");
+            stringBuilder.Append("\n");
+
+            return stringBuilder.ToString();
         }
 
         public string GetUserInput(Player player, Board board)
