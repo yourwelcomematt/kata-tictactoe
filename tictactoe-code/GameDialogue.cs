@@ -19,8 +19,17 @@ namespace kata_tictactoe
         public string GetUserInput(Player player)
         {
             Console.Write(GetUserInputPromptString(player));
+            string userInput = Console.ReadLine();
 
-            return Console.ReadLine();
+            while (!ValidateUserInput(userInput))
+            {
+                Console.WriteLine("Invalid input. Please try again...");
+                Console.WriteLine();
+                Console.Write(GetUserInputPromptString(player));
+                userInput = Console.ReadLine();
+            }
+
+            return userInput;
         }
 
         public bool ValidateUserInput(string userInput)
@@ -32,12 +41,12 @@ namespace kata_tictactoe
         
             string firstCharacterString = userInput.Substring(0, 1);
             string secondCharacterString = userInput.Substring(1, 1);
-            string thrirdCharacterString = userInput.Substring(2, 1);
+            string thirdCharacterString = userInput.Substring(2, 1);
             
             int firstCharacterInt;
             int thirdCharacterInt;
             
-            if (!int.TryParse(firstCharacterString, out firstCharacterInt) || !int.TryParse(thrirdCharacterString, out thirdCharacterInt))
+            if (!int.TryParse(firstCharacterString, out firstCharacterInt) || !int.TryParse(thirdCharacterString, out thirdCharacterInt))
             {
                 return false;
             }
