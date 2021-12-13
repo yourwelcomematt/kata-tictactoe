@@ -21,6 +21,7 @@ while (gameRunning)
     }
 
     board.UpdateBoard(userInput, player1.Symbol);
+    Console.WriteLine();
     Console.WriteLine(board.GetStringOfBoard());
 
     userInput = gameIo.GetUserInput(player2, board).Trim();
@@ -31,6 +32,7 @@ while (gameRunning)
     }
 
     board.UpdateBoard(userInput, player2.Symbol);
+    Console.WriteLine();
     Console.WriteLine(board.GetStringOfBoard());
 }
 

@@ -30,6 +30,14 @@ namespace kata_tictactoe
                 userInput = Console.ReadLine();
             }
 
+            while (CheckIfPositionIsAlreadyFilled(userInput, board))
+            {
+                Console.WriteLine("Oh no, a piece is already at this place! Try again...");
+                Console.WriteLine();
+                Console.Write(GetUserInputPromptString(player));
+                userInput = Console.ReadLine();
+            }
+
             return userInput;
         }
 
@@ -77,6 +85,11 @@ namespace kata_tictactoe
 
         public bool CheckIfPositionIsAlreadyFilled(string userInput, Board board)
         {
+            if (userInput.Equals("q") || userInput.Equals("Q"))
+            {
+                return false;
+            }
+            
             int rowNumber = int.Parse(userInput.Substring(0, 1));
             int columnNumberIndex = int.Parse(userInput.Substring(2, 1)) - 1;
             string position;
