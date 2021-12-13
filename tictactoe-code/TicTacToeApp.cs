@@ -9,12 +9,12 @@ Board board = new();
 GameDialogue gameDialogue = new();
 
 Console.WriteLine(gameDialogue.GetWelcomeMessageString());
-string userInput = gameDialogue.GetUserInput(player1);
+string userInput = gameDialogue.GetUserInput(player1).Trim();
 
-board.UpdateBoard("1,1", player1.Symbol);
+board.UpdateBoard(userInput, player1.Symbol);
 Console.WriteLine(board.GetStringOfBoard());
 
-userInput = gameDialogue.GetUserInput(player2);
+userInput = gameDialogue.GetUserInput(player2).Trim();
 
-board.UpdateBoard("1,3", player2.Symbol);
+board.UpdateBoard(userInput, player2.Symbol);
 Console.WriteLine(board.GetStringOfBoard());

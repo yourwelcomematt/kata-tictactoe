@@ -26,7 +26,7 @@ namespace tictactoe_tests
             // Arrange
             Board board = new();
             // Act
-            board.UpdateBoard("1, 1", "X");
+            board.UpdateBoard("1,1", "X");
             List<string> actual = board.Row1;
             List<string> expected = new() {"X", ".", "."};
             // Assert
@@ -39,7 +39,7 @@ namespace tictactoe_tests
             // Arrange
             Board board = new();
             // Act
-            board.UpdateBoard("2, 1", "X");
+            board.UpdateBoard("2,1", "X");
             List<string> actual = board.Row2;
             List<string> expected = new() {"X", ".", "."};
             // Assert
@@ -52,7 +52,7 @@ namespace tictactoe_tests
             // Arrange
             Board board = new();
             // Act
-            board.UpdateBoard("3, 1", "X");
+            board.UpdateBoard("3,1", "X");
             List<string> actual = board.Row3;
             List<string> expected = new() {"X", ".", "."};
             // Assert
@@ -64,7 +64,7 @@ namespace tictactoe_tests
         {
             // Arrange
             Board board = new();
-            board.UpdateBoard("3, 1", "X");
+            board.UpdateBoard("3,1", "X");
             // Act
             string actual = board.GetStringOfBoard();
             string expected = ". . .\n" + 

@@ -1,5 +1,4 @@
 using System;
-using System.Text;
 
 namespace kata_tictactoe
 {
@@ -22,6 +21,39 @@ namespace kata_tictactoe
             Console.Write(GetUserInputPromptString(player));
 
             return Console.ReadLine();
+        }
+
+        public bool ValidateUserInput(string userInput)
+        {
+            if (userInput.Length != 3)
+            {
+                return false;
+            }
+        
+            string firstCharacterString = userInput.Substring(0, 1);
+            string secondCharacterString = userInput.Substring(1, 1);
+            string thrirdCharacterString = userInput.Substring(2, 1);
+            
+            int firstCharacterInt;
+            int thirdCharacterInt;
+            
+            if (!int.TryParse(firstCharacterString, out firstCharacterInt) || !int.TryParse(thrirdCharacterString, out thirdCharacterInt))
+            {
+                return false;
+            }
+
+            if ((firstCharacterInt > 3 || firstCharacterInt < 1) || (thirdCharacterInt > 3 || thirdCharacterInt < 1))
+            {
+                return false;
+            }
+
+            if (!secondCharacterString.Equals(","))
+            {
+                return false;
+            }
+            
+            return true;
+        
         }
     }
 }

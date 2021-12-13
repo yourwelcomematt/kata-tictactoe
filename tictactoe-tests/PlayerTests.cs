@@ -36,7 +36,7 @@ namespace tictactoe_tests
             Board board = new();
             Player player = new("Player 1", "X");
             // Act
-            board.UpdateBoard("1, 1", player.Symbol);
+            board.UpdateBoard("1,1", player.Symbol);
             string expected = "X . .\n" +
                               ". . .\n" +
                               ". . .\n";
