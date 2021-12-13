@@ -9,14 +9,13 @@ Board board = new();
 GameIo gameIo = new();
 Endgame endgame = new();
 bool gameRunning = true;
-bool movesLeft = true;
 
 Console.WriteLine(gameIo.GetWelcomeMessageString());
 
 while (gameRunning)
 {
     // Player 1's turn
-    movesLeft = endgame.CheckIfThereAreMovesLeft(board.Row1, board.Row2, board.Row3);
+    bool movesLeft = endgame.CheckIfThereAreMovesLeft(board.Row1, board.Row2, board.Row3);
 
     if (!movesLeft)
     {
