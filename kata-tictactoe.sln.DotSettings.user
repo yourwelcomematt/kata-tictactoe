@@ -1,7 +1,13 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=B3DA16A4_002DEF96_002D487C_002DBD29_002D885C3BAC8D06_002Ff_003AGameIOTests_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=5f686372_002Da147_002D4182_002D9bd6_002D13a9e7baf3a8/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="BoardTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;xUnit::B3DA16A4-EF96-487C-BD29-885C3BAC8D06::net6.0::tictactoe_tests.BoardTests&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::B3DA16A4-EF96-487C-BD29-885C3BAC8D06::net6.0::tictactoe_tests.PlayerTests&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
+  &lt;Or&gt;
+    &lt;TestAncestor&gt;
+      &lt;TestId&gt;xUnit::B3DA16A4-EF96-487C-BD29-885C3BAC8D06::net6.0::tictactoe_tests.BoardTests&lt;/TestId&gt;
+      &lt;TestId&gt;xUnit::B3DA16A4-EF96-487C-BD29-885C3BAC8D06::net6.0::tictactoe_tests.PlayerTests&lt;/TestId&gt;
+      &lt;TestId&gt;xUnit::B3DA16A4-EF96-487C-BD29-885C3BAC8D06::net6.0::tictactoe_tests.InputTests&lt;/TestId&gt;
+      &lt;TestId&gt;xUnit::B3DA16A4-EF96-487C-BD29-885C3BAC8D06::net6.0::tictactoe_tests.GameDialogueTests&lt;/TestId&gt;
+    &lt;/TestAncestor&gt;
+    &lt;ProjectFile&gt;B3DA16A4-EF96-487C-BD29-885C3BAC8D06/f:GameIoTests.cs&lt;/ProjectFile&gt;
+  &lt;/Or&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
