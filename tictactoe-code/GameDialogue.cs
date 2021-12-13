@@ -34,6 +34,11 @@ namespace kata_tictactoe
 
         public bool ValidateUserInput(string userInput)
         {
+            if (userInput.Equals("q") || userInput.Equals("Q"))
+            {
+                return true;
+            }
+            
             if (userInput.Length != 3)
             {
                 return false;
@@ -62,7 +67,11 @@ namespace kata_tictactoe
             }
             
             return true;
-        
+        }
+
+        public bool CheckIfQuitting(string userInput)
+        {
+            return userInput.Equals("q") || userInput.Equals("Q");
         }
     }
 }

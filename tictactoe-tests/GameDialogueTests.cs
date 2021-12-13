@@ -103,5 +103,33 @@ namespace tictactoe_tests
             // Assert
             Assert.Equal(expected, actual);
         }
+
+        [Theory]
+        [InlineData("q")]
+        [InlineData("Q")]
+        public void CheckIfQuitting_ReturnsTrue_AfterEnteringQ(string userInput)
+        {
+            // Arrange
+            GameDialogue gameDialogue = new();
+            // Act
+            bool expected = true;
+            bool actual = gameDialogue.CheckIfQuitting(userInput);
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+        
+        [Theory]
+        [InlineData("asd")]
+        [InlineData("1,1")]
+        public void CheckIfQuitting_ReturnsFalse_AfterNotEnteringQ(string userInput)
+        {
+            // Arrange
+            GameDialogue gameDialogue = new();
+            // Act
+            bool expected = false;
+            bool actual = gameDialogue.CheckIfQuitting(userInput);
+            // Assert
+            Assert.Equal(expected, actual);
+        }
     }
 }
