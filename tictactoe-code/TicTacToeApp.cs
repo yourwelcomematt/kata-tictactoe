@@ -19,7 +19,7 @@ while (gameRunning)
 
     if (!movesLeft)
     {
-        Console.WriteLine("No more moves available. You have drawn the game");
+        Console.WriteLine("No more moves available. It's a draw...");
         break;
     }
     
@@ -35,6 +35,12 @@ while (gameRunning)
     board.UpdateBoard(userInput, player1.Symbol);
     Console.WriteLine(gameIo.GetMoveAcceptedString());
     Console.WriteLine(board.GetStringOfBoard());
+    
+    if (endgame.CheckIfAPlayerHasWon(board.Row1, board.Row2, board.Row3))
+    {
+        Console.WriteLine("Congratulations Player 1, you've won the game!");
+        break;
+    }
     
     
     // Player 2's turn
@@ -58,6 +64,12 @@ while (gameRunning)
     board.UpdateBoard(userInput, player2.Symbol);
     Console.WriteLine(gameIo.GetMoveAcceptedString());
     Console.WriteLine(board.GetStringOfBoard());
+    
+    if (endgame.CheckIfAPlayerHasWon(board.Row1, board.Row2, board.Row3))
+    {
+        Console.WriteLine("Congratulations Player 2, you've won the game!");
+        break;
+    }
 }
 
 Console.WriteLine();
