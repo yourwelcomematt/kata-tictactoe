@@ -1,5 +1,4 @@
 using System;
-using System.Text;
 
 namespace kata_tictactoe
 {
@@ -19,11 +18,7 @@ namespace kata_tictactoe
 
         public string GetMoveAcceptedString()
         {
-            StringBuilder stringBuilder = new();
-            stringBuilder.Append("Move accepted, here's the current board:");
-            stringBuilder.Append("\n");
-
-            return stringBuilder.ToString();
+            return "Move accepted, here's the current board:\n";
         }
 
         public string GetUserInput(Player player, Board board)

@@ -7,6 +7,7 @@
       &lt;TestId&gt;xUnit::B3DA16A4-EF96-487C-BD29-885C3BAC8D06::net6.0::tictactoe_tests.PlayerTests&lt;/TestId&gt;
       &lt;TestId&gt;xUnit::B3DA16A4-EF96-487C-BD29-885C3BAC8D06::net6.0::tictactoe_tests.InputTests&lt;/TestId&gt;
       &lt;TestId&gt;xUnit::B3DA16A4-EF96-487C-BD29-885C3BAC8D06::net6.0::tictactoe_tests.GameDialogueTests&lt;/TestId&gt;
+      &lt;TestId&gt;xUnit::B3DA16A4-EF96-487C-BD29-885C3BAC8D06::net6.0::tictactoe_tests.EndgameTests&lt;/TestId&gt;
     &lt;/TestAncestor&gt;
     &lt;ProjectFile&gt;B3DA16A4-EF96-487C-BD29-885C3BAC8D06/f:GameIoTests.cs&lt;/ProjectFile&gt;
   &lt;/Or&gt;
